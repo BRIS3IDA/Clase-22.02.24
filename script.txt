@@ -1,0 +1,27 @@
+#para instalar una libreria#
+install.packages("BiocManager")
+
+#Para instalar una libreria de biocmanager#
+BiocManager::install("sangeranalyseR")
+a
+
+#para cargar la libreria#
+library(sangeranalyseR)
+
+#ver los archivos/definir working directory#
+setwd("C:/Users/Alumno1/Downloads/Secuencias ATPasa/Secuencias ATPasa/Placa_TORATP")
+list.files()
+
+
+> my_aligned_contigs <- SangerAlignment(ABIF_Directory      = "C:/Users/Alumno1/Desktop/PlacaTORATP",
++                                       processMethod       = "REGEX",
++                                       REGEX_SuffixForward = "_*.ab1",
++                                       REGEX_SuffixReverse = "_*.ab1")
+
+
+launchApp(my_aligned_contigs)
+install.packages("shinydashboard")
+
+
+#Para concatenar
+Get-Content *.fasta | Set-Content ArchivoFinalRaw.fasta
