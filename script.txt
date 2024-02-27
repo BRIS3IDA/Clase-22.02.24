@@ -13,7 +13,7 @@ setwd("C:/Users/Alumno1/Downloads/Secuencias ATPasa/Secuencias ATPasa/Placa_TORA
 list.files()
 
 
-> my_aligned_contigs <- SangerAlignment(ABIF_Directory      = "C:/Users/Alumno1/Desktop/PlacaTORATP",
+> my_aligned_contigs <- SangerAlignment(ABIF_Directory      = "D:/Bioinformatica/Clean/Clean Abi",
 +                                       processMethod       = "REGEX",
 +                                       REGEX_SuffixForward = "_*.ab1",
 +                                       REGEX_SuffixReverse = "_*.ab1")
@@ -25,3 +25,21 @@ install.packages("shinydashboard")
 
 #Para concatenar
 Get-Content *.fasta | Set-Content ArchivoFinalRaw.fasta
+
+#Para descargar SangeranalyseR
+install.packages("devtools")
+
+use_github_action_check_standard(open = FALSE)
+
+install_github("roblanf/sangeranalyseR", ref = "master")
+
+#Para preparar las secuencias con el Sanger
+
+setwd("D:/Bioinformatica/Clean/Clean Abi")
+rawDataDir <- system.file("D:/Bioinformatica/Clean/Clean Abi", package = "sangeranalyseR")
+my_aligned_contigs <- SangerAlignment(ABIF_Directory      = "D:/Bioinformatica/Clean/Clean Abi",
++                                                          processMethod       = "REGEX",
++                                                         REGEX_SuffixForward = "_*.ab1",
++                                                         REGEX_SuffixReverse = "_*.ab1")
+
+
